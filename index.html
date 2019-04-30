@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>View Jet2 Confirmation</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/jet2.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <button class="modal-activate confirm" data-btn-type="confirm">
+            Show Confirmation
+        </button>
+        <button class="modal-activate button--style-secondary" data-btn-type="secondary">
+            Secondary Modal
+        </button>
+
+        <div class="modal content" id="confirm">
+            <p class="text--copy-header text--copy-has-icon"><i class="material-icons">check_circle</i><span>Congratulations your jet2 holiday booking has been confirmed</span></p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus blandit enim a rhoncus pretium. Etiam orci nisi, maximus quis mauris non, interdum vehicula dui. Cras ultrices magna quis lacus maximus, quis elementum nunc tristique.</p>
+        </div>
+
+        <div class="modal content" id="secondary">
+            <p class="text--copy-header text--copy-has-icon"><i class="material-icons">info</i><span>This is the secondary modal</span></p>
+            <p>Vestibulum lectus quam, faucibus a lacinia eu, tincidunt in leo. Nam sed lacinia elit, ut dapibus nibh. Donec elit justo, mollis auctor accumsan vel, aliquam vel metus.</p>
+        </div>
+        <div class="modal mask target"></div>
+        <div class="modal holder target">
+            <div class="modal content-inner"></div>
+            <div class="modal footer">
+                <button class="close-modal button button--style-secondary">Cancel</button>
+                <button class="close-modal button">Continue</button>
+            </div>
+        </div>
+
+        <script src="modal.js"></script>
+    </body>
+</html>

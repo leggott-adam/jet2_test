@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css?family=Libre+Franklin:400,800,800i');
+
+$jet2Blue: #203240;
+$borderColor: #CCCCCC;
+$bodyTextColor: #777777;
+$modalMaskBg: rgba(0,0,0,0.5);
+$confirmColor: #0d9c0d;
+
+$bodyTextSize: 12px;
+$headerTextSize: 20px;
+$fontBold: 800;
+
+@mixin set-flexbox {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+@mixin flex-align-center {
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+@mixin flex-direction-column {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+@mixin flex-direction-row {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+@mixin flex-justify-center {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+body {
+    font-family: 'Libre Franklin', sans-serif;
+    padding-top: 50px;
+}
+i {
+    margin-right: 10px;
+    color: $confirmColor;
+}
+p {
+    font-size: $bodyTextSize;
+    color: $bodyTextColor;
+
+    &.text--copy-has-icon {
+        @include set-flexbox;
+    }
+    &.text--copy-header span {
+        font-size: $headerTextSize;
+        color: $jet2Blue;
+        font-weight: $fontBold;
+    }
+}
+button {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 5px;
+    border: 2px solid $jet2Blue;
+    font-weight: $fontBold;
+    padding: 10px 0;
+    margin: 5px 0;
+    font-style: italic;
+    background-color: $jet2Blue;
+    color: white;
+
+    &.button--style-secondary {
+        background-color: transparent;
+        color: $jet2Blue;
+    }
+    &:focus {
+        outline: 0;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+}
+.modal {
+    &.mask, &.content, &.holder {
+      display:none;
+          &.modal--status-is-visible {
+            display: block;
+          }
+    }
+    &.mask {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        background-color: $modalMaskBg;
+    }
+    &.holder {
+        position: absolute;
+        top: 50px;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 3;
+        background-color: #FFF;
+        color: #000;
+
+        > div {
+            padding: 5px 25px;
+        }
+    }
+    &.footer {
+        @include set-flexbox;
+        @include flex-align-center;
+        @include flex-direction-column;
+        border-top: 1px solid $borderColor;
+    }
+}
+@media only screen and (min-width: 700px) {
+    .modal {
+        &.holder {
+            max-width: 640px;
+            height: auto;
+            margin-left: -320px;
+            left: 50%;
+            top: 50%;
+            transform: translate(0, -50%);
+
+            > div {
+                padding: 0 60px;
+            }
+            .content-inner {
+                padding-top: 40px;
+                margin-bottom: 40px;
+            }
+            .modal.footer {
+                margin: 20px 0;
+                padding-top: 10px;
+                @include flex-direction-row;
+                @include flex-justify-center;
+
+                button {
+                    max-width: 200px;
+                    margin: 10px 5px 0;
+                }
+            }
+        }
+    }
+}

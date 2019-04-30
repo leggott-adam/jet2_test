@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css?family=Libre+Franklin:400,800,800i");
+/* line 45, ../scss/jet2.scss */
+body { font-family: 'Libre Franklin', sans-serif; padding-top: 50px; }
+
+/* line 49, ../scss/jet2.scss */
+i { margin-right: 10px; color: #0d9c0d; }
+
+/* line 53, ../scss/jet2.scss */
+p { font-size: 12px; color: #777777; }
+/* line 57, ../scss/jet2.scss */
+p.text--copy-has-icon { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; }
+/* line 60, ../scss/jet2.scss */
+p.text--copy-header span { font-size: 20px; color: #203240; font-weight: 800; }
+
+/* line 66, ../scss/jet2.scss */
+button { width: 100%; max-width: 350px; border-radius: 5px; border: 2px solid #203240; font-weight: 800; padding: 10px 0; margin: 5px 0; font-style: italic; background-color: #203240; color: white; }
+/* line 78, ../scss/jet2.scss */
+button.button--style-secondary { background-color: transparent; color: #203240; }
+/* line 82, ../scss/jet2.scss */
+button:focus { outline: 0; }
+/* line 85, ../scss/jet2.scss */
+button:hover { cursor: pointer; }
+
+/* line 90, ../scss/jet2.scss */
+.modal.mask, .modal.content, .modal.holder { display: none; }
+/* line 92, ../scss/jet2.scss */
+.modal.mask.modal--status-is-visible, .modal.content.modal--status-is-visible, .modal.holder.modal--status-is-visible { display: block; }
+/* line 96, ../scss/jet2.scss */
+.modal.mask { height: 100%; width: 100%; position: absolute; top: 0; left: 0; z-index: 2; background-color: rgba(0, 0, 0, 0.5); }
+/* line 105, ../scss/jet2.scss */
+.modal.holder { position: absolute; top: 50px; left: 0; height: 100%; width: 100%; z-index: 3; background-color: #FFF; color: #000; }
+/* line 115, ../scss/jet2.scss */
+.modal.holder > div { padding: 5px 25px; }
+/* line 119, ../scss/jet2.scss */
+.modal.footer { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box-align: center; -moz-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; border-top: 1px solid #cccccc; }
+
+@media only screen and (min-width: 700px) { /* line 128, ../scss/jet2.scss */
+  .modal.holder { max-width: 640px; height: auto; margin-left: -320px; left: 50%; top: 50%; transform: translate(0, -50%); }
+  /* line 136, ../scss/jet2.scss */
+  .modal.holder > div { padding: 0 60px; }
+  /* line 139, ../scss/jet2.scss */
+  .modal.holder .content-inner { padding-top: 40px; margin-bottom: 40px; }
+  /* line 143, ../scss/jet2.scss */
+  .modal.holder .modal.footer { margin: 20px 0; padding-top: 10px; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+  /* line 149, ../scss/jet2.scss */
+  .modal.holder .modal.footer button { max-width: 200px; margin: 10px 5px 0; } }
